@@ -1,2 +1,2 @@
 # SiteCFR2
-Ok
+https://00alexo.github.io/SiteCFR2/
