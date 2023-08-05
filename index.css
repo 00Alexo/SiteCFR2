@@ -1,0 +1,50 @@
+body{
+    padding:0;
+    margin:0;
+    background:url(Home/background-home.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+    backdrop-filter: blur(10px);
+    height:100vh;
+}
+
+.navbar_home{
+    display:flex;
+    flex-wrap: wrap;
+    background-color: #3c040c;
+    padding:10px;
+    justify-content: space-evenly;
+}
+
+.navbar_home a{
+    text-decoration: none;
+    color: white;
+}
+.navbar_home svg {
+    fill: white;
+    margin-top:3px;
+}
+
+.natie{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:15px;
+}
+
+.DMC{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: absolute;
+    bottom: 0;
+    height:500px;
+    width:100%;
+}
+.DMC img{
+    height:250px;
+}
+
+.Mandorlini{
+    height:350px !important;
+}
