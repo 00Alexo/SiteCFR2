@@ -1,3 +1,4 @@
+
 body{
     padding:0;
     margin:0;
@@ -47,4 +48,33 @@ body{
 
 .Mandorlini{
     height:350px !important;
+}
+
+.newsBox{
+    display:flex;
+    background:url(Home/CFRvFCSBjpg.jpg);
+    background-size:cover;
+    width:1350px;
+    height:450px;
+    margin: 0 auto;
+    margin-top:50px;
+    justify-content: center;
+}
+
+#selectNewsBox{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color:#3c040c;
+    margin-bottom:0px;
+    width:35px;
+}
+#selectNewsBox svg{
+    transform: scale(1.5);
+    fill:white;
+    cursor:pointer;
+}
+
+.newsBox img{
+    transform: scale(0.5);
 }
