@@ -4,6 +4,27 @@ const selectorNewsBox3 = document.getElementById('selectorNewsBox3');
 const selectorNewsBox4 = document.getElementById('selectorNewsBox4');
 const selectorNewsBox5 = document.getElementById('selectorNewsBox5');
 const selectorNewsBox = document.querySelectorAll('.selectorNewsBox');
+const data = new Date();
+let ora = data.getHours()
+let minutul = data.getMinutes();
+let secunda = data.getSeconds();
+
+ora = parseInt(ora);
+minutul = parseInt(minutul);
+secunda = parseInt(secunda);
+
+let oraMeci = 21;
+let minutulMeci = 30;
+let secundaMeci = 0;
+let oraTimer = oraMeci - ora;
+let minutulTimer = minutulMeci - minutul;
+let secundaTimer = secundaMeci - secunda;
+
+let Timer = () =>{
+    oraTimer = oraMeci - ora;
+    minutulTimer = minutulMeci - minutul;
+    secundaTimer = secundaMeci - secunda;
+}
 
 const ChangeBoxColor = () => {
     selectorNewsBox.forEach((box) => {
@@ -31,3 +52,9 @@ selectorNewsBox5.addEventListener(`click`, () => {
     ChangeBoxColor();
     selectorNewsBox5.style.fill = `black`;
 });
+
+while(oraTimer != 0 || minutulTimer != 0 || secundaTimer != 0){
+    console.log(oraTimer);
+    console.log(minutulTimer);
+    console.log(secundaTimer);
+}
