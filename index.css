@@ -81,3 +81,15 @@ body{
 .icon_FCSB{
     margin-left:65px;
 }
+
+#timer{
+    transform:scale(3);
+    margin-top: -825px;
+    color:white;
+}
+.DivTimer{
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}

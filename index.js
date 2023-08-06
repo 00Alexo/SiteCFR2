@@ -4,26 +4,28 @@ const selectorNewsBox3 = document.getElementById('selectorNewsBox3');
 const selectorNewsBox4 = document.getElementById('selectorNewsBox4');
 const selectorNewsBox5 = document.getElementById('selectorNewsBox5');
 const selectorNewsBox = document.querySelectorAll('.selectorNewsBox');
-const data = new Date();
-let ora = data.getHours()
-let minutul = data.getMinutes();
-let secunda = data.getSeconds();
-
-ora = parseInt(ora);
-minutul = parseInt(minutul);
-secunda = parseInt(secunda);
-
+const timer = document.getElementById('timer');
 let oraMeci = 21;
 let minutulMeci = 30;
 let secundaMeci = 0;
-let oraTimer = oraMeci - ora;
-let minutulTimer = minutulMeci - minutul;
-let secundaTimer = secundaMeci - secunda;
 
-let Timer = () =>{
-    oraTimer = oraMeci - ora;
-    minutulTimer = minutulMeci - minutul;
-    secundaTimer = secundaMeci - secunda;
+let Timer = () => {
+    const currentData = new Date();
+    let oraTimer = oraMeci - currentData.getHours();
+    let minutulTimer = minutulMeci - currentData.getMinutes();
+    let secundaTimer = secundaMeci - currentData.getSeconds();
+
+    if (secundaTimer < 0) {
+        minutulTimer -= 1;
+        secundaTimer += 60;
+    }
+
+    if (minutulTimer < 0) {
+        oraTimer -= 1;
+        minutulTimer += 60;
+    }
+
+    return { oraTimer, minutulTimer, secundaTimer };
 }
 
 const ChangeBoxColor = () => {
@@ -32,29 +34,30 @@ const ChangeBoxColor = () => {
     })
 }
 
-selectorNewsBox1.addEventListener(`click`, () => {
+selectorNewsBox1.addEventListener('click', () => {
     ChangeBoxColor();
-    selectorNewsBox1.style.fill = `black`;
+    selectorNewsBox1.style.fill = 'black';
 });
-selectorNewsBox2.addEventListener(`click`, () => {
+selectorNewsBox2.addEventListener('click', () => {
     ChangeBoxColor();
-    selectorNewsBox2.style.fill = `black`;
+    selectorNewsBox2.style.fill = 'black';
 });
-selectorNewsBox3.addEventListener(`click`, () => {
+selectorNewsBox3.addEventListener('click', () => {
     ChangeBoxColor();
-    selectorNewsBox3.style.fill = `black`;
+    selectorNewsBox3.style.fill = 'black';
 });
-selectorNewsBox4.addEventListener(`click`, () => {
+selectorNewsBox4.addEventListener('click', () => {
     ChangeBoxColor();
-    selectorNewsBox4.style.fill = `black`;
+    selectorNewsBox4.style.fill = 'black';
 });
-selectorNewsBox5.addEventListener(`click`, () => {
+selectorNewsBox5.addEventListener('click', () => {
     ChangeBoxColor();
-    selectorNewsBox5.style.fill = `black`;
+    selectorNewsBox5.style.fill = 'black';
 });
 
-while(oraTimer != 0 || minutulTimer != 0 || secundaTimer != 0){
-    console.log(oraTimer);
-    console.log(minutulTimer);
-    console.log(secundaTimer);
-}
+setInterval(() => {
+    const { oraTimer, minutulTimer, secundaTimer } = Timer();
+    if (oraTimer != 0 || minutulTimer != 0 || secundaTimer != 0) {
+        timer.innerHTML = `${oraTimer} : ${minutulTimer} : ${secundaTimer}`;
+    }
+}, 1000);
