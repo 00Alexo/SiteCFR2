@@ -40,11 +40,61 @@ const ChangeBoxColor = () => {
     })
 }
 
-selectorNewsBox1.addEventListener('click', () => {
+
+const defaultPage = () => {
     ChangeBoxColor();
     selectorNewsBox1.style.fill = 'black';
+};
+defaultPage();
+
+const page1 = () => {
+    homeTeam.style.opacity = 0;
+    awayTeam.style.opacity = 0;
+    timer.innerHTML = ' ';
+    setTimeout(() => {
+    setTimeout(() =>{  
+        timerActiv = setInterval(() => {
+            const { oraTimer, minutulTimer, secundaTimer } = Timer();
+            if (oraTimer != 0 || minutulTimer != 0 || secundaTimer != 0) {
+                timer.innerHTML = `${oraTimer} : ${minutulTimer} : ${secundaTimer}`;
+            }
+        }, 100);
+        homeTeam.src="Home/IconCFR.png";
+        awayTeam.src="Home/IconFCSB.png";
+        homeTeam.style.opacity = 1;
+        awayTeam.style.opacity = 1;
+        }, 500);
+    newsBox.style.backgroundImage = "url('Home/CFRvFCSBjpg.jpg')";
+    homeTeam.style.marginLeft= "-70px";  
+    }, 500);
+}
+
+const page2 = () =>{
+    clearInterval(timerActiv);
+    homeTeam.style.opacity = 0;
+    awayTeam.style.opacity = 0;
+    setTimeout(()=> {
+    timer.innerHTML = "2 - 1";
+    setTimeout(() =>{  
+        homeTeam.src="Home/IconADANA.png";
+        awayTeam.src="Home/IconCFR.png";
+        homeTeam.style.opacity = 1;
+        awayTeam.style.opacity = 1;
+        }, 500);
+    newsBox.style.backgroundImage = "url('Home/ADANAvCFR.jpg')";
+    homeTeam.style.marginLeft= "-220px";  
+    }, 500);
+}
+
+
+selectorNewsBox1.addEventListener('click', () => {
+    page1();
+    defaultPage();
 });
 selectorNewsBox2.addEventListener('click', () => {
+    if (selectorNewsBox2.style.fill === 'white'){
+        page2();
+    }
     ChangeBoxColor();
     selectorNewsBox2.style.fill = 'black';
 });
@@ -66,27 +116,9 @@ timerActiv = setInterval(() => {
     if (oraTimer != 0 || minutulTimer != 0 || secundaTimer != 0) {
         timer.innerHTML = `${oraTimer} : ${minutulTimer} : ${secundaTimer}`;
     }
-}, 1000);
+}, 100);
 
-const page2 = () =>{
-    clearInterval(timerActiv);
-    timer.innerHTML = "2 - 1";
-    homeTeam.style.opacity = 0;
-    awayTeam.style.opacity = 0;
-    setTimeout(() => {
-    homeTeam.src="Home/IconADANA.png";
-    awayTeam.src="Home/IconCFR.png";
-    setTimeout(() =>{  
-        homeTeam.style.opacity = 1;
-        awayTeam.style.opacity = 1;
-        }, 1000);
-    }, 500);
-    newsBox.style.backgroundImage = "url('Home/ADANAvCFR.jpg')";
-    homeTeam.style.marginLeft= "-220px";  
 
-}
-selectorNewsBox2.addEventListener('click', () =>{
-    page2();
-});
 
-let page2Interval = setInterval(page2, 10000);
+
+
