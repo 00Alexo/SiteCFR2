@@ -1,4 +1,6 @@
-
+html {
+    scroll-behavior: smooth;
+  }
 body{
     padding:0;
     margin:0;
@@ -57,6 +59,8 @@ body{
     margin: 0 auto;
     margin-top:50px;
     gap: 150px;
+    scroll-behavior: smooth;
+    transition: all 1s ease-in-out;
 }
 
 #selectNewsBox{
@@ -70,10 +74,12 @@ body{
     transform: scale(1.5);
     fill:white;
     cursor:pointer;
+    transition: fill 0.5s ease-in-out;
 }
 
 .newsBox img{
     transform: scale(0.5);
+    transition: opacity 0.5s ease-in-out;
 }
 .icon_CFR{
     margin-left:-70px;
