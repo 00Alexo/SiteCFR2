@@ -60,7 +60,7 @@ const page1 = () => {
             }
         }, 100);
         homeTeam.src="Home/IconCFR.png";
-        awayTeam.src="Home/IconFCSB.png";
+        awayTeam.src="Home/IconSTEAUA.png";
         homeTeam.style.opacity = 1;
         awayTeam.style.opacity = 1;
         }, 500);
@@ -114,7 +114,7 @@ const page4 = () =>{
     timer.innerHTML = "1 - 1";
     setTimeout(() =>{  
         homeTeam.src="Home/IconCFR.png";
-        awayTeam.src="Home/IconAdana.png";
+        awayTeam.src="Home/IconADANA.png";
         homeTeam.style.opacity = 1;
         awayTeam.style.opacity = 1;
         }, 500);
