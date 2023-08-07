@@ -124,6 +124,24 @@ const page4 = () =>{
     }, 500);
 }
 
+const page5 = () =>{
+    clearInterval(timerActiv);
+    homeTeam.style.opacity = 0;
+    awayTeam.style.opacity = 0;
+    setTimeout(()=> {
+    timer.innerHTML = "3 - 1";
+    setTimeout(() =>{  
+        homeTeam.src="Home/IconCFR.png";
+        awayTeam.src="Home/IconUTA.png";
+        homeTeam.style.opacity = 1;
+        awayTeam.style.opacity = 1;
+        }, 500);
+    newsBox.style.backgroundImage = "url('Home/CFRvUTA.jpg')";
+    homeTeam.style.marginLeft= "-40px"; 
+    newsBox.style.gap = "545px"; 
+    }, 500);
+}
+
 selectorNewsBox1.addEventListener('click', () => {
     if (selectorNewsBox1.style.fill === 'white'){
         page1();
