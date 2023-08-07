@@ -65,6 +65,8 @@ body{
 
 #selectNewsBox{
     display:flex;
+    position:absolute;
+    height:48.282%;
     flex-direction: column;
     justify-content: space-evenly;
     background-color:#3c040c;
@@ -82,12 +84,8 @@ body{
     transition: opacity 0.5s ease-in-out;
 }
 .icon_CFR{
-    margin-left:-70px;
+    margin-left: 150px;   
 }
-.icon_FCSB{
-    margin-left:65px;
-}
-
 #timer{
     transform:scale(3);
     margin-top: -825px;

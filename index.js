@@ -65,7 +65,8 @@ const page1 = () => {
         awayTeam.style.opacity = 1;
         }, 500);
     newsBox.style.backgroundImage = "url('Home/CFRvFCSBjpg.jpg')";
-    homeTeam.style.marginLeft= "-70px";  
+    newsBox.style.gap = "150px";  
+    homeTeam.style.marginLeft= "150px";  
     }, 500);
 }
 
@@ -82,13 +83,51 @@ const page2 = () =>{
         awayTeam.style.opacity = 1;
         }, 500);
     newsBox.style.backgroundImage = "url('Home/ADANAvCFR.jpg')";
-    homeTeam.style.marginLeft= "-220px";  
+    homeTeam.style.marginLeft= "-40px";
+    newsBox.style.gap = "220px";  
     }, 500);
 }
 
+const page3 = () =>{
+    clearInterval(timerActiv);
+    homeTeam.style.opacity = 0;
+    awayTeam.style.opacity = 0;
+    setTimeout(()=> {
+    timer.innerHTML = "1 - 1";
+    setTimeout(() =>{  
+        homeTeam.src="Home/IconCSU.png";
+        awayTeam.src="Home/IconCFR.png";
+        homeTeam.style.opacity = 1;
+        awayTeam.style.opacity = 1;
+        }, 500);
+    newsBox.style.backgroundImage = "url('Home/CFRvCSU.jpg')";
+    homeTeam.style.marginLeft= "220px"; 
+    newsBox.style.gap = "210px"; 
+    }, 500);
+}
+
+const page4 = () =>{
+    clearInterval(timerActiv);
+    homeTeam.style.opacity = 0;
+    awayTeam.style.opacity = 0;
+    setTimeout(()=> {
+    timer.innerHTML = "1 - 1";
+    setTimeout(() =>{  
+        homeTeam.src="Home/IconCFR.png";
+        awayTeam.src="Home/IconAdana.png";
+        homeTeam.style.opacity = 1;
+        awayTeam.style.opacity = 1;
+        }, 500);
+    newsBox.style.backgroundImage = "url('Home/ADANAvCFR.png')";
+    homeTeam.style.marginLeft= "-40px"; 
+    newsBox.style.gap = "450px"; 
+    }, 500);
+}
 
 selectorNewsBox1.addEventListener('click', () => {
-    page1();
+    if (selectorNewsBox1.style.fill === 'white'){
+        page1();
+    }
     defaultPage();
 });
 selectorNewsBox2.addEventListener('click', () => {
@@ -99,14 +138,23 @@ selectorNewsBox2.addEventListener('click', () => {
     selectorNewsBox2.style.fill = 'black';
 });
 selectorNewsBox3.addEventListener('click', () => {
+    if (selectorNewsBox3.style.fill === 'white'){
+        page3();
+    }
     ChangeBoxColor();
     selectorNewsBox3.style.fill = 'black';
 });
 selectorNewsBox4.addEventListener('click', () => {
+    if (selectorNewsBox4.style.fill === 'white'){
+        page4();
+    }
     ChangeBoxColor();
     selectorNewsBox4.style.fill = 'black';
 });
 selectorNewsBox5.addEventListener('click', () => {
+    if (selectorNewsBox5.style.fill === 'white'){
+        page5();
+    }
     ChangeBoxColor();
     selectorNewsBox5.style.fill = 'black';
 });
