@@ -142,6 +142,7 @@ const page5 = () =>{
     }, 500);
 }
 
+
 selectorNewsBox1.addEventListener('click', () => {
     if (selectorNewsBox1.style.fill === 'white'){
         page1();
